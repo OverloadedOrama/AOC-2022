@@ -27,6 +27,11 @@ fn main() {
         else if second_elf_lower <= first_elf_lower && second_elf_upper >= first_elf_upper { // If the second elf fully contains the first
             fully_contained_pairs += 1;
         }
+
+        if first_elf_upper >= second_elf_lower && first_elf_lower <= second_elf_upper {
+            number_of_overlapping += 1;
+        }
     }
-    println!("There are {fully_contained_pairs} pairs where one range fully contains the other");
+    println!("There are {fully_contained_pairs} pairs where one range fully contains the other.");
+    println!("There are {number_of_overlapping} pairs that overlap.");
 }
